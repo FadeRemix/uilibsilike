@@ -82,7 +82,7 @@ local library = {
     options     = {},
     rainbows    = {},
     notifs      = {},
-    debugmode   = true,
+    debugmode   = false,
     cheatname   = 'hyphon',
     gamename    = 'apocalypse rising 2',
     themes      = themes,
@@ -3231,7 +3231,7 @@ do
                     end
                 end
 
-                if debug_hover_object then
+                if true then
                     if library.debug_object.Parent ~= debug_hover_object then
                         library.debug_object.Visible = true
                         library.debug_object.Parent = debug_hover_object
@@ -3343,6 +3343,10 @@ function library:create_settings_tab(menu)
 
     settings_main:toggle({text = 'keybind indicator', flag = 'keybind_indicator_enabled', callback = function(bool)
         library.keybind_indicator:set_enabled(bool)
+    end})
+	
+	settings_main:toggle({text = 'keybind indicator', flag = 'keybind_indicator_enabled', callback = function(bool)
+        library.watermark:set_enabled(bool)
     end})
 
     settings_main:button({text = 'join discord', callback = function()
