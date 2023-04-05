@@ -1,8 +1,6 @@
 
 local startup_args = ({...})[1] or {}
-if library ~= nil then
-    library:unload()
-end
+
 
 local themes = {
     ['default'] = {
